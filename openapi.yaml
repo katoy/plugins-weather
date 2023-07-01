@@ -1,0 +1,25 @@
+openapi: 3.0.1
+info:
+  title: Weather API
+  version: "v1"
+servers:
+  - url: PLUGIN_HOSTNAME
+paths:
+  /weather:
+    get:
+      operationId: getWeather
+      summary: Get weather information for a city
+      parameters:
+        - in: query
+          name: latitude
+          schema:
+            type: number
+          description: latitude
+        - in: query
+          name: longitude
+          schema:
+            type: number
+          description: longitude
+      responses:
+        "200":
+          description: OK
