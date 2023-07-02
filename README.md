@@ -44,7 +44,12 @@ If you run into issues or have questions building a plugin, please join our [Dev
 
 REST API としては, 1 雲の [緯度。軽度] を指定したら、そこの天気情報を返すだけのものを定義しただけ。
 ChatGPT が都市の名前から [緯度, 軽度] に変換をしてくれる。
-複数の都市を指定したr、それぞれについて調べてくれる。
+複数の都市を指定したら、それぞれについて調べてくれる。
+
+![002.ong](screenshots/002.png)
+
+テーブル表示させることもできる。
+
 
 ## See
 
