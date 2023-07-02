@@ -38,6 +38,14 @@ The plugin should now be installed and enabled! You can start with a question li
 
 If you run into issues or have questions building a plugin, please join our [Developer community forum](https://community.openai.com/c/chat-plugins/20).
 
+## スクリーンショット
+
+![001.ong](screenshots/001.png)
+
+REST API としては, 1 雲の [緯度。軽度] を指定したら、そこの天気情報を返すだけのものを定義しただけ。
+ChatGPT が都市の名前から [緯度, 軽度] に変換をしてくれる。
+複数の都市を指定したr、それぞれについて調べてくれる。
+
 ## See
 
 See

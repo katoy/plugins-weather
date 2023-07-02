@@ -14,12 +14,75 @@ paths:
           name: latitude
           schema:
             type: number
-          description: latitude
+          description: latitude of city
         - in: query
           name: longitude
           schema:
             type: number
-          description: longitude
+          description: longitude of city
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherResponse'
+
+
+components:
+  schemas:
+    CurrentWeather:
+      type: object
+      properties:
+        is_day:
+          type: integer
+          description: 0は夜を示し、1は昼を示します。
+        temperature:
+          type: number
+          format: float
+          description: 現在の気温。
+        time:
+          type: string
+          format: date-time
+          description: 気温測定の日時。
+        weathercode:
+          type: integer
+          description: 天候の状態を示すコード。
+        winddirection:
+          type: number
+          format: float
+          description: 風向きの角度（度数法）。
+        windspeed:
+          type: number
+          format: float
+          description: 風速（km/h）。
+    WeatherResponse:
+      type: object
+      properties:
+        current_weather:
+          $ref: '#/components/schemas/CurrentWeather'
+        elevation:
+          type: number
+          format: float
+          description: 地点の海抜（m）。
+        generationtime_ms:
+          type: number
+          format: float
+          description: レスポンスを生成するのにかかった時間（ミリ秒）。
+        latitude:
+          type: number
+          format: float
+          description: 緯度。
+        longitude:
+          type: number
+          format: float
+          description: 経度。
+        timezone:
+          type: string
+          description: タイムゾーン
+        timezone_abbreviation:
+          type: string
+          description: タイムゾーンの略称
+        utc_offset_seconds:
+          type: integer
+          description: UTCからのオフセット（秒）

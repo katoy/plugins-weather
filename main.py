@@ -6,9 +6,8 @@ import quart
 import quart_cors
 from quart import request
 
-
 def get_weather(lat, lon):
-    # See 
+    # See
     # https://open-meteo.com/en/docs
     url = f"https://api.open-meteo.com/v1/jma?current_weather=true&latitude={lat}&longitude={lon}"
     # &hourly=temperature_2m,relativehumidity_2m"
@@ -49,6 +48,11 @@ async def openapi_spec():
         text = text.replace("PLUGIN_HOSTNAME", f"https://{host}")
         return quart.Response(text, mimetype="text/yaml")
 
+
+@app.get("/logo.png")
+async def plugin_logo():
+    filename = 'logo.png'
+    return await quart.send_file(filename, mimetype='image/png')
 
 def main():
     app.run(debug=True, host="0.0.0.0", port=5003)
